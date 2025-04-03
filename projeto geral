@@ -1,0 +1,95 @@
+import random
+entrada = int(input('Escolha um modo de jogo humano x humano(1), humano x computador (2), computador x computador(3)'))
+continuar = True
+placarJ1 = 0
+placarJ2 = 0
+placarE = 0
+entradageral = entrada
+
+while continuar:
+
+    #JOGADOR X JOGADOR
+    if entradageral:
+        if entrada == 1:
+            escolha1 = int(input('JOGADOR 1:escolha entre pedra(1), papel(2) ou tesoura (3)'))
+            escolha2 = int(input('JOGADOR 2:escolha entre pedra(1), papel(2) ou tesoura (3)'))
+        if entrada == 2:
+            escolha1 = int(input('JOGADOR 1:escolha entre pedra(1), papel(2) ou tesoura (3)'))
+            escolha2 = random.randint(1, 3)
+        if entrada == 3:
+            escolha1 = random.randint(1, 3)
+            escolha2 = random.randint(1, 3)
+
+
+
+
+    #JOGADOR 1  PEDRA
+
+    if escolha1 == 1 and escolha2 == 2:
+        print('jogador 1 escolheu pedra, jogador 2 escolheu papel')
+        print('vitória do jogodor 2')
+        print('-----------------------------------------------------------------------------------------------------------------')
+        placarJ2 = placarJ2+1
+
+    if escolha1 == 1 and escolha2 == 3:
+        print('jogador 1 escolheu pedra, jogador 2 escolheu tesoura')
+        print('vitória do jogodor 1')
+        print('-----------------------------------------------------------------------------------------------------------------')
+        placarJ1 = placarJ1+1
+
+    if escolha1 == 1 and escolha2 == 1:
+        print('jogador 1 escolheu pedra, jogador 2 escolheu pedra')
+        print('empate')
+        print('-----------------------------------------------------------------------------------------------------------------')
+        placarE = placarE + 1
+
+        #JOGADOR 1 PAPEL
+
+    if escolha1 == 2 and escolha2 == 1:
+        print('jogador 1 escolheu papel, jogador 2 escolheu pedra')
+        print('vitória do jogodor 1')
+        print('-----------------------------------------------------------------------------------------------------------------')
+        placarJ1 += 1
+
+    if escolha1 == 2 and escolha2 == 2:
+        print('jogador 1 escolheu papel, jogador 2 escolheu papel')
+        print('empate')
+        print('-----------------------------------------------------------------------------------------------------------------')
+        placarE += 1
+
+    if escolha1 == 2 and escolha2 == 3:
+        print('jogador 1 escolheu papel, jogador 2 escolheu tesoura')
+        print('vitória do jogodor 2')
+        print('-----------------------------------------------------------------------------------------------------------------')
+        placarJ2 += 1
+
+
+        #JOGADOR 1 TESOURA
+
+    if escolha1 == 3 and escolha2 == 1:
+        print('jogador 1 escolheu tesoura, jogador 2 escolheu pedra')
+        print('vitória do jogodor 2')
+        print('-----------------------------------------------------------------------------------------------------------------')
+        placarJ2 += 1
+
+    if escolha1 == 3 and escolha2 == 2:
+        print('jogador 1 escolheu tesoura, jogador 2 escolheu papel')
+        print('vitória do jogodor 1')
+        print('-----------------------------------------------------------------------------------------------------------------')
+        placarJ1 += 1
+
+    if escolha1 == 3 and escolha2 == 3:
+        print('jogador 1 escolheu tesoura, jogador 2 escolheu tesoura')
+        print('empate')
+        print('-----------------------------------------------------------------------------------------------------------------')
+        placarE += 1
+
+
+    opcao = input('Deseja continuar (s/n): ')
+    if opcao != 's':
+        continuar = False
+        print('-----------------------------------------------------------------------------------------------------------------')
+
+print('Placar final JOGADOR1:', placarJ1, ', JOGADOR2:', placarJ2, ', EMPATE', placarE)
+print('obrigado por usar este programa!')
+print('Alunos: Hugo, Nathan, Heitor, João')
